@@ -6,8 +6,23 @@ Created on Thu Jul 11 20:01:06 2019
 @author: abhishek
 """
 
-
-
+def convertunits(_):
+    while ' billion' in _:
+        _=_.replace(' billion',"000000000")
+    while ' million' in _:
+        _=_.replace(' million',"000000")
+    while ' thousand' in _:
+        _=_.replace(' thousand',"000")
+    while ' lac' in _:
+        _=_.replace(' lac',"00000")
+    while ' lakh' in _:
+        _=_.replace(' lakhs',"00000")
+    while ' lacs' in _:
+        _=_.replace(' lacs',"00000")
+    while ' lakhs' in _:
+        _=_.replace(' lakhs',"00000")
+    return _
+    
 import re
 city=["/home/abhishek/Documents/FAQ-Builder/Delhi.txt","/home/abhishek/Documents/FAQ-Builder/East York.txt",'/home/abhishek/Documents/FAQ-Builder/Yatomi.txt']
 for each in city:
@@ -19,15 +34,11 @@ for each in city:
     #    print(b)
         for _ in b:
             if "population" in _:
-                while ' billion' in _:
-                    _=_.replace(' billion',"000000000")
-                while ' million' in _:
-                    _=_.replace(' million',"000000")
-                while ' thousand' in _:
-                    _=_.replace(' thousand',"000")
+                print(_)
+                _=convertunits(_)
                 while ',' in _:
                     _=_.replace(',',"") #For removing commas from between the population figures.
-                print(_)
+#                print(_)
                 array = re.findall(r'[0-9]+', _)
 #                print(array)
 #                d=[_.find(k) for k in array]

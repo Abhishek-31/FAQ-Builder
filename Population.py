@@ -5,6 +5,9 @@ Created on Thu Jul 11 20:01:06 2019
 
 @author: abhishek
 """
+
+
+
 import re
 with open("/home/abhishek/Documents/FAQ-Builder/Delhi.txt","r+") as f:
     a=f.read()

@@ -1,3 +1,11 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jul 13 20:43:19 2019
+
+@author: abhishek
+"""
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -64,7 +72,7 @@ def convertunits(_):
     _=" ".join(d)
     return _
 
-with open("/home/abhishek/Downloads/Part-2-City.txt","r+") as l:
+with open("/home/abhishek/Downloads/Part-1-City.txt","r+") as l:
     data=l.read()
     datad=json.loads(data)
     print(len(datad))
@@ -133,7 +141,10 @@ with open("/home/abhishek/Downloads/Part-2-City.txt","r+") as l:
             ma[each]=d
             print(ma[each])
 
-with open("population-final-2.txt","w+") as f:
+for key,val in ma.items():
+    print("key is" + key)
+    print("value is"+val)
+with open("population-final.txt","w+") as f:
     f.write(json.dumps(ma))
 #import re
 #city=["/home/abhishek/Documents/FAQ-Builder/Delhi.txt","/home/abhishek/Documents/FAQ-Builder/East York.txt",'/home/abhishek/Documents/FAQ-Builder/Yatomi.txt']
